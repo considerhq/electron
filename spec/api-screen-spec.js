@@ -2,7 +2,6 @@ const { expect } = require('chai')
 const { screen } = require('electron').remote
 
 describe('screen module', () => {
-  console.log(screen)
   describe('screen.getCursorScreenPoint()', () => {
     it('returns a point object', () => {
       const point = screen.getCursorScreenPoint()
