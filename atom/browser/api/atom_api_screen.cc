@@ -116,7 +116,8 @@ void Screen::OnDisplayMetricsChanged(const display::Display& display,
 v8::Local<v8::Value> Screen::Create(v8::Isolate* isolate) {
   if (!Browser::Get()->is_ready()) {
     isolate->ThrowException(v8::Exception::Error(mate::StringToV8(
-        isolate, "'screen' module can't be used before the app ready event")));
+        isolate,
+        "The 'screen' module can't be used before the app 'ready' event")));
     return v8::Null(isolate);
   }
 

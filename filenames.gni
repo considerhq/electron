@@ -22,7 +22,7 @@ filenames = {
     "lib/browser/api/net.js",
     "lib/browser/api/net-log.js",
     "lib/browser/api/notification.js",
-    "lib/browser/api/power-monitor.js",
+    "lib/browser/api/power-monitor.ts",
     "lib/browser/api/power-save-blocker.js",
     "lib/browser/api/protocol.ts",
     "lib/browser/api/screen.ts",
