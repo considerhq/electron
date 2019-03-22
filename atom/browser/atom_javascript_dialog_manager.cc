@@ -53,8 +53,10 @@ void AtomJavaScriptDialogManager::RunJavaScriptDialog(
   }
 
   std::vector<std::string> buttons = {"OK"};
+  int cancel_id = 0;
   if (dialog_type == JavaScriptDialogType::JAVASCRIPT_DIALOG_TYPE_CONFIRM) {
     buttons.push_back("Cancel");
+    cancel_id++;
   }
 
   origin_counts_[origin]++;
@@ -76,7 +78,7 @@ void AtomJavaScriptDialogManager::RunJavaScriptDialog(
   }
 
   atom::ShowMessageBox(
-      window, atom::MessageBoxType::MESSAGE_BOX_TYPE_NONE, buttons, -1, 0,
+      window, atom::MessageBoxType::MESSAGE_BOX_TYPE_NONE, buttons, -1, cancel_id,
       atom::MessageBoxOptions::MESSAGE_BOX_NONE, "",
       base::UTF16ToUTF8(message_text), "", checkbox, false, gfx::ImageSkia(),
       base::Bind(&AtomJavaScriptDialogManager::OnMessageBoxCallback,
